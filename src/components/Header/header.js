@@ -35,7 +35,7 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <Link to="/" className="logo">
-          Dev<span>Portfolio</span>
+          <img src="/Logo.png" alt="Portfolio Logo" style={{ height: '40px' }} />
         </Link>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

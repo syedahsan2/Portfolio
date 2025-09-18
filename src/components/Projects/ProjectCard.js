@@ -11,13 +11,24 @@ const ProjectCard = ({ project }) => {
 
   const handleImageError = () => {
     setImageError(true);
-    setImageLoaded(true);
   };
+
+  // Check if we're using a color instead of image URL
+  const isColorPlaceholder = project.image.startsWith('#') || project.isColor;
 
   return (
     <div className="project-card" data-category={project.category}>
       <div className="project-image">
-        {!imageError ? (
+        {isColorPlaceholder ? (
+          // Show colored div instead of image
+          <div 
+            className="color-placeholder"
+            style={{ backgroundColor: project.image }}
+          >
+            <span>{project.title}</span>
+          </div>
+        ) : !imageError ? (
+          // Show actual image
           <img
             src={project.image}
             alt={project.title}
@@ -26,6 +37,7 @@ const ProjectCard = ({ project }) => {
             className={imageLoaded ? 'loaded' : ''}
           />
         ) : (
+          // Show error placeholder
           <div className="project-image-placeholder">
             <i className="fas fa-image"></i>
             <span>Image not available</span>
@@ -34,25 +46,13 @@ const ProjectCard = ({ project }) => {
         
         <div className="project-overlay">
           <div className="project-actions">
-            <a
-              href="#view"
-              className="project-action-btn"
-              aria-label={`View details of ${project.title}`}
-            >
+            <a href="#view" className="project-action-btn" aria-label={`View details of ${project.title}`}>
               <i className="fas fa-eye"></i>
             </a>
-            <a
-              href="#github"
-              className="project-action-btn"
-              aria-label={`View code for ${project.title}`}
-            >
+            <a href="#github" className="project-action-btn" aria-label={`View code for ${project.title}`}>
               <i className="fab fa-github"></i>
             </a>
-            <a
-              href="#live"
-              className="project-action-btn"
-              aria-label={`View live demo of ${project.title}`}
-            >
+            <a href="#live" className="project-action-btn" aria-label={`View live demo of ${project.title}`}>
               <i className="fas fa-external-link-alt"></i>
             </a>
           </div>

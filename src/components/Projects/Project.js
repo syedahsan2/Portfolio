@@ -9,60 +9,123 @@ const Projects = () => {
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Website',
-    description: 'A fully responsive e-commerce platform with cart functionality and payment integration.',
-    image: '/images/IDM-1.jpg',
-    tags: ['React', 'Node.js', 'MongoDB'],
-    category: 'web'
+    title: 'Digital Marketing Agency',
+    description: 'A fully responsive website of digital marketing agency with separate pages.',
+    image: '/images/IDM.webp', // Your actual image
+    tags: ['WordPress', 'PHP', 'myphp'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://idm.org.uk/',
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A drag-and-drop task management application with real-time updates.',
-    image: '#10B981', // Just use color code instead of URL
-    tags: ['React', 'Firebase', 'Tailwind'],
-    category: 'web',
-    isColor: true // Add this flag
+    title: 'Digital Marketing Agency',
+    description: 'A Digital Marketing Agency Web application.',
+    image: '/images/Intellect_works.webp', // Local file
+    tags: ['WordPress', 'PHP', 'myphp'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://intellectworks.co.uk/',
   },
   {
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'Real-time weather information with 5-day forecast and location search.',
-    image: '#F59E0B', // Just use color code instead of URL
-    tags: ['React', 'API', 'Chart.js'],
-    category: 'web',
-    isColor: true // Add this flag
+    title: 'E-Commerce Store',
+    description: 'A modern e-commerce store with user authentication and payment integration.',
+    image: '/images/Celebs_Jacket.webp', // Local file
+    tags: ['WordPress', 'PHP', 'myphp'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://celebsjacket.com/',    
   },
   {
     id: 4,
-    title: 'Fitness Tracker',
-    description: 'Workout tracking application with progress charts and personalized recommendations.',
-    image: '#EF4444', // Just use color code instead of URL
-    tags: ['React Native', 'Firebase', 'Redux'],
-    category: 'mobile',
-    isColor: true // Add this flag
+    title: 'Custom Portfolio Website',
+    description: 'The digital marketing agency fully mobile responsive and where company portfolio exhibit.',
+    image: '/images/Logos_Pixel.webp', // Local file
+    tags: ['PHP', 'Custom Code', 'HTML5,CSS3,Bootstrap'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://logospixel.com/',
+    githubLink: 'https://github.com/syedahsan2/Logos-Pixels'
   },
   {
     id: 5,
-    title: 'Recipe Finder',
-    description: 'Discover recipes based on ingredients you have with step-by-step instructions.',
-    image: '#8B5CF6', // Just use color code instead of URL
-    tags: ['React', 'API', 'Material UI'],
-    category: 'web',
-    isColor: true // Add this flag
+    title: 'E-Commerce Store',
+    description: 'A leather jacket e-commerce store with product reviews and admin panel.',
+    image: '/images/Moviestar_jacket.webp', // Local file
+    tags: ['PHP', 'Custome Code', 'CSS3,HTML5,Bootstrap'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://moviestarjacket.com/',  
   },
   {
     id: 6,
-    title: 'Portfolio Website',
-    description: 'A modern portfolio website with animations and responsive design.',
-    image: '#EC4899', // Just use color code instead of URL
-    tags: ['React', 'CSS3', 'Framer Motion'],
-    category: 'web',
-    isColor: true // Add this flag
+    title: 'E-Commerce Store',
+    description: 'A leather jacket store with product and reviews add to cart.',
+    image: '/images/Pelle_Store.webp', // Local file
+    tags: ['Shopify', 'Liquid', 'Customization'],
+    category: 'Shopify',
+    liveLink: 'https://pellestore.co/',
+  },
+    {
+    id: 7,
+    title: 'Art Agency Portfolio',
+    description: 'A modern portfolio website with art and responsive design.',
+    image: '/images/Vtuber_Station.webp', // Local file
+    tags: ['PHP', 'CSS3', 'Portfolio'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://vtuberstation.com/',
+  },
+  {
+    id: 8,
+    title: 'Digital Portfolio',
+    description: 'A modern Digital agency portfolio website with responsive design.',
+    image: '/images/Websiteinweek.webp', // Local file
+    tags: ['PHP', 'CSS3', 'Design'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://websiteinweek.com/',
+    
+  },
+  {
+    id: 9,
+    title: 'Online Learning Platform',
+    description: 'A modern online platform for student who want to learn Quran.',
+    image: '/images/Qiraah_Online.webp', // Local file
+    tags: ['PHP', 'CSS3', 'Design'],
+    category: 'HTML/CSS/Bootstrap',
+    liveLink: 'https://syedahsaniw.github.io/Qiraah-Online/',
+    githubLink: 'https://github.com/syedahsaniw/Qiraah-Online'
+    
+  },
+  {
+    id: 10,
+    title: 'Barber Shop',
+    description: 'A barber shop where barber showcase there services.',
+    image: '/images/barber.webp', // Local file
+    tags: ['PHP', 'CSS3', 'Design'],
+    category: 'React',
+    liveLink: 'https://barber-phi-two.vercel.app/',
+    githubLink: 'https://github.com/syedahsan2/barber'
+    
+  }
+  ,
+  {
+    id: 11,
+    title: 'Art Agency Portfolio',
+    description: 'A modern portfolio website with art and responsive design(Incompelete).',
+    image: '/images/Twitch_graphic.webp', // Local file
+    tags: ['PHP', 'CSS3', 'Design'],
+    category: 'HTML/CSS/Bootstrap',
+    githubLink: 'https://github.com/syedahsan2/Twitch-Graphics'
+    
+  },
+  {
+    id: 12,
+    title: 'Digital Marketing Agency',
+    description: 'The digital marketing agency fully mobile responsive and where company portfolio exhibit.',
+    image: '/images/fasts.webp', // Local file
+    tags: ['PHP', 'Custom Code', 'HTML5,CSS3,Bootstrap'],
+    category: 'PHP/ WordPress',
+    liveLink: 'https://faststechnologies.com/',
+    githubLink: 'https://github.com/syedahsan2/Logos-Pixels'
   }
 ];
-
-  const categories = ['all', 'web', 'mobile', 'design'];
+  const categories = ['all', 'PHP/ WordPress', 'HTML/CSS/Bootstrap', 'Shopify', 'React'];
   
   const filteredProjects = activeFilter === 'all' 
     ? projects 

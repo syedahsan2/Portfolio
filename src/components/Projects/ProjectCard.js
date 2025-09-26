@@ -1,66 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
-  const handleImageError = () => {
-    setImageError(true);
-  };
-
-  // Check if we're using a color instead of image URL
-  const isColorPlaceholder = project.image.startsWith('#') || project.isColor;
-
   return (
     <div className="project-card" data-category={project.category}>
-      <div className="project-image">
-        {isColorPlaceholder ? (
-          // Show colored div instead of image
-          <div 
-            className="color-placeholder"
-            style={{ backgroundColor: project.image }}
+      <img 
+        src={project.image} 
+        alt={project.title}
+        style={{ width: '100%', height: '250px', objectFit: 'cover' }}
+      />
+      
+      <div className="project-overlay">
+        <div className="project-actions">
+          {/* Details Link - Always show */}
+          <a 
+            href={project.detailsLink || "#"} 
+            className="project-action-btn"
+            aria-label={`View details of ${project.title}`}
           >
-            <span>{project.title}</span>
-          </div>
-        ) : !imageError ? (
-          // Show actual image
-          <img
-            src={project.image}
-            alt={project.title}
-            onLoad={handleImageLoad}
-            onError={handleImageError}
-            className={imageLoaded ? 'loaded' : ''}
-          />
-        ) : (
-          // Show error placeholder
-          <div className="project-image-placeholder">
-            <i className="fas fa-image"></i>
-            <span>Image not available</span>
-          </div>
-        )}
-        
-        <div className="project-overlay">
-          <div className="project-actions">
-            <a href="#view" className="project-action-btn" aria-label={`View details of ${project.title}`}>
-              <i className="fas fa-eye"></i>
-            </a>
-            <a href="#github" className="project-action-btn" aria-label={`View code for ${project.title}`}>
+            <i className="fas fa-eye"></i>
+          </a>
+          
+          {/* GitHub Link - Only show if project.githubLink exists */}
+          {project.githubLink && (
+            <a 
+              href={project.githubLink} 
+              className="project-action-btn"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={`View code for ${project.title}`}
+            >
               <i className="fab fa-github"></i>
             </a>
-            <a href="#live" className="project-action-btn" aria-label={`View live demo of ${project.title}`}>
+          )}
+          
+          {/* Live Demo Link - Only show if project.liveLink exists */}
+          {project.liveLink && (
+            <a 
+              href={project.liveLink} 
+              className="project-action-btn"
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={`View live demo of ${project.title}`}
+            >
               <i className="fas fa-external-link-alt"></i>
             </a>
-          </div>
+          )}
         </div>
-        
-        <div className="project-category">
-          {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-        </div>
+      </div>
+      
+      <div className="project-category">
+        {project.category}
       </div>
       
       <div className="project-content">
@@ -69,19 +59,23 @@ const ProjectCard = ({ project }) => {
         
         <div className="project-tags">
           {project.tags.map((tag, index) => (
-            <span key={index} className="project-tag">
-              {tag}
-            </span>
+            <span key={index} className="project-tag">{tag}</span>
           ))}
         </div>
         
         <div className="project-footer">
           <span className="project-date">Jan 2023</span>
-          <div className="project-links">
-            <a href="#details" className="project-link">
-              View Project <i className="fas fa-arrow-right"></i>
+          {/* Optional: Add GitHub link in footer too */}
+          {project.githubLink && (
+            <a 
+              href={project.githubLink} 
+              className="project-link"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              View Code <i className="fab fa-github"></i>
             </a>
-          </div>
+          )}
         </div>
       </div>
     </div>

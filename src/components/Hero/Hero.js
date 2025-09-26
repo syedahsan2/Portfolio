@@ -11,12 +11,14 @@ const Hero = () => {
         <div className="hero-text">
           <h1 className="hero-title">
             <span className="greeting">Hello, I'm</span>
-            <span className="name">John Doe</span>
-            <span className="title">React.js Developer</span>
+            <span className="name">Syed Ahsan</span>
+            <span className="title">Front-End & PHP Developer</span>
           </h1>
           <p className="hero-description">
-            I create beautiful, functional, and responsive web applications with modern technologies. 
-            Let's bring your ideas to life!
+            I build clean, responsive web apps with React and PHP.
+            Over 3 years’ experience creating custom WordPress themes and plugins—no drag-and-drop, just solid, 
+            performance-focused code.
+
           </p>
           <div className="hero-buttons">
             <Link to="/projects" className="btn btn-primary">

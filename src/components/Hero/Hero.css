@@ -219,7 +219,7 @@
   }
   
   .hero-text {
-    margin: 0 auto; /* Center on mobile */
+    margin: 25px auto; /* Center on mobile */
     padding-right: 0;
     text-align: center;
   }

@@ -26,7 +26,7 @@ const Footer = () => {
               <a href="#" className="social-link" aria-label="GitHub">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="#" className="social-link" aria-label="LinkedIn">
+              <a href="www.linkedin.com/in/syed-ahsan-developer/" className="social-link" aria-label="LinkedIn">
                 <i className="fab fa-linkedin"></i>
               </a>
               <a href="#" className="social-link" aria-label="Twitter">
@@ -61,9 +61,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Contact Info</h4>
             <div className="contact-info">
-              <p><i className="fas fa-envelope"></i> john.doe@example.com</p>
-              <p><i className="fas fa-phone"></i> +1 (234) 567-8901</p>
-              <p><i className="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+              <p><i className="fas fa-envelope"></i> ahsanzahid106@gmail.com</p>
+              <p><i className="fas fa-phone"></i> +92 331 2481674</p>
+              <p><i className="fas fa-map-marker-alt"></i> Karachi, PK</p>
             </div>
           </div>
         </div>

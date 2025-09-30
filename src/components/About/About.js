@@ -1,34 +1,69 @@
 // components/About/About.js
-import React from 'react';
-import './About.css';
+import React from "react";
+import "./About.css";
 
-const About = () => {
-  const skills = [
-    { name: 'React', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'HTML/CSS', level: 95 },
-    { name: 'Node.js', level: 75 },
-    { name: 'UI/UX Design', level: 80 },
-    { name: 'Git', level: 85 },
-  ];
+// Swiper imports
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
+
+const projects = [
+  {
+    name: "Website in Week",
+    description: "Built a fast, responsive business site in under 7 days.",
+    tech: "PHP, HTML, CSS",
+  },
+  {
+    name: "Fasts Technology",
+    description: "Technology solutions company site with custom UI.",
+    tech: "PHP, HTML, CSS",
+  },
+  {
+    name: "Logos Pixel",
+    description: "Logo and branding platform with custom WordPress theme.",
+    tech: "PHP, HTML, CSS",
+  },
+  {
+    name: "Moviestar Jacket",
+    description: "E-commerce store for movie-inspired jackets.",
+    tech: "PHP, HTML, CSS",
+  },
+  {
+    name: "Celebs Jacket",
+    description: "Celebrity fashion store with custom theme.",
+    tech: "WooCommerce, PHP",
+  },
+  {
+    name: "Pelle Store",
+    description: "Celebrity fashion store with custom theme.",
+    tech: "Shopify, Liquid",
+  },
+];
+
+function About() {
   return (
     <section className="about" id="about">
       <div className="container">
         <h2 className="section-title">About Me</h2>
+
         <div className="about-content">
+          {/* Top: About text */}
           <div className="about-text">
             <h3>Curious about who I am?</h3>
             <p>
-              I'm a passionate React.js developer with over 3 years of experience creating 
-              modern web applications. I specialize in building responsive, user-friendly 
-              interfaces with clean code and attention to detail.
+              Front-end developer with over three years of experience in React.js,
+              PHP, Next.js, and WordPress. Holds a diploma in Software Engineering
+              and is pursuing a BBIT degree while working two developer roles.
+              Focuses on clean, responsive interfaces, performance, and security.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or enjoying outdoor activities. I believe in continuous 
-              learning and pushing the boundaries of what's possible with web technologies.
+              Key projects include Website in Week, Fasts Technology, Logos Pixel,
+              Moviestar Jacket, Celebs Jacket, and multiple custom WordPress
+              builds with bespoke themes and plugins.
             </p>
+
             <div className="about-stats">
               <div className="stat">
                 <span className="stat-number">25+</span>
@@ -44,29 +79,32 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          {/* Bottom: Projects showcase */}
           <div className="about-skills">
-            <h3>My Skills</h3>
-            <div className="skills-container">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill">
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
+            <h3>Project-Based Skills Showcase</h3>
+            <Swiper
+              modules={[Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              className="skills-slider"
+            >
+              {projects.map((project, index) => (
+                <SwiperSlide key={index}>
+                  <div className="project-card">
+                    <h4>{project.name}</h4>
+                    <p>{project.description}</p>
+                    <span className="tech">{project.tech}</span>
                   </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default About;

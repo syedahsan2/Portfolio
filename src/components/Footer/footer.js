@@ -18,7 +18,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-           <img src="/Logo.png" alt="Portfolio Logo" style={{ height: '40px' }} />
+           <Link to="/" className="logo">
+              <img src="/Logo.png" alt="Portfolio Logo" style={{ height: '40px' }} />
+            </Link>
             <p className="footer-description">
               Creating beautiful, functional, and responsive web applications with modern technologies.
             </p>

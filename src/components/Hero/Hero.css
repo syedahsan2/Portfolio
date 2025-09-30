@@ -219,9 +219,10 @@
   }
   
   .hero-text {
-    margin: 25px auto; /* Center on mobile */
+    margin: 25px 0px;
     padding-right: 0;
     text-align: center;
+    margin-right: 65px;
   }
   
   .hero-title {

@@ -11,35 +11,36 @@ import "swiper/css/pagination";
 
 const projects = [
   {
-    name: "Website in Week",
-    description: "Built a fast, responsive business site in under 7 days.",
-    tech: "PHP, HTML, CSS",
-  },
-  {
-    name: "Fasts Technology",
-    description: "Technology solutions company site with custom UI.",
-    tech: "PHP, HTML, CSS",
-  },
-  {
-    name: "Logos Pixel",
-    description: "Logo and branding platform with custom WordPress theme.",
-    tech: "PHP, HTML, CSS",
+  name: "Celebs Jacket",
+  description: "WooCommerce-based celebrity fashion store developed with a custom theme and tailored features.",
+  tech: "WooCommerce, PHP"
   },
   {
     name: "Moviestar Jacket",
-    description: "E-commerce store for movie-inspired jackets.",
-    tech: "PHP, HTML, CSS",
+    description: "E-commerce platform for movie-inspired jackets, built with a custom front-end and backend structure.",
+    tech: "PHP, HTML, CSS"
   },
   {
-    name: "Celebs Jacket",
-    description: "Celebrity fashion store with custom theme.",
-    tech: "WooCommerce, PHP",
+    name: "Logos Pixel",
+    description: "Branding and design platform powered by a custom WordPress theme for logo and identity projects.",
+    tech: "PHP, HTML, CSS"
   },
   {
-    name: "Pelle Store",
-    description: "Celebrity fashion store with custom theme.",
-    tech: "Shopify, Liquid",
+    name: "Website in Week",
+    description: "High-performance business website designed and deployed in under seven days.",
+    tech: "PHP, HTML, CSS"
   },
+  {
+    name: "Fasts Technology",
+    description: "Corporate site for a technology solutions provider, featuring a modern custom UI and responsive design.",
+    tech: "PHP, HTML, CSS"
+  }
+  ,
+  {
+  name: "Pelle Store",
+  description: "Shopify-based celebrity fashion store built with a custom theme and tailored features.",
+  tech: "Shopify, Liquid"
+  }
 ];
 
 function About() {
@@ -84,12 +85,16 @@ function About() {
           <div className="about-skills">
             <h3>Project-Based Skills Showcase</h3>
             <Swiper
-              modules={[Pagination]}
-              spaceBetween={20}
-              slidesPerView={1}
-              pagination={{ clickable: true }}
-              className="skills-slider"
-            >
+                modules={[Pagination]}
+                spaceBetween={20}
+                pagination={{ clickable: true }}
+                breakpoints={{
+                  320: { slidesPerView: 1 },   // phones
+                  768: { slidesPerView: 2 },   // tablets
+                  1024: { slidesPerView: 3 },  // desktops
+                }}
+                className="skills-slider"
+              >
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
                   <div className="project-card">

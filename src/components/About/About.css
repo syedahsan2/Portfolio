@@ -1,6 +1,7 @@
+/* About Section Base Styles */
 .about {
   padding: 100px 0;
-  background: linear-gradient(to bottom, #FFFFFF, #F8FAFC);
+  background: linear-gradient(to bottom, var(--white), var(--light-bg));
   position: relative;
   overflow: hidden;
 }
@@ -68,7 +69,7 @@
 .stat {
   text-align: center;
   padding: 1.5rem;
-  background: white;
+  background: var(--white);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
@@ -89,6 +90,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  margin-bottom: 0.5rem;
 }
 
 .stat-label {
@@ -99,13 +101,13 @@
 
 /* --- Skills/Projects Area --- */
 .about-skills {
-  background: white;
+  background: var(--white);
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
   max-width: 900px;
-  margin: 0 auto; /* centers it */
+  margin: 0 auto;
 }
 
 .about-skills h3 {
@@ -115,69 +117,321 @@
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .about-skills h3::after {
   content: '';
   position: absolute;
   bottom: -8px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 40px;
   height: 3px;
   background: var(--primary-color);
   border-radius: 2px;
 }
 
-/* --- Project Cards --- */
+/* --- Swiper Container --- */
+.skills-slider {
+  width: 100%;
+  height: auto;
+  padding: 20px 10px 60px !important;
+  position: relative;
+}
+
+/* Swiper Slide */
+.skills-slider .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Project Cards */
 .project-card {
-  background: #f9fafb;
+  background: var(--white);
   border: 1px solid #e5e7eb;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
-  transition: 0.3s ease;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+  border-color: var(--primary-color);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
 }
 
 .project-card h4 {
   font-size: 1.4rem;
+  font-weight: 700;
   color: var(--dark-color);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .project-card p {
   font-size: 1rem;
   color: var(--gray-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .project-card .tech {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--primary-color);
+  transition: var(--transition);
 }
 
-/* Slider Pagination */
+.project-card:hover .tech {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+/* Swiper Pagination - Mobile Optimized */
+.skills-slider .swiper-pagination {
+  bottom: 20px !important;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
 .skills-slider .swiper-pagination-bullet {
-  background: var(--primary-color);
+  width: 12px;
+  height: 12px;
+  background: #d1d5db;
   opacity: 0.6;
+  transition: var(--transition);
+  border-radius: 6px;
+  margin: 0 4px !important;
 }
 
 .skills-slider .swiper-pagination-bullet-active {
+  background: var(--primary-color);
   opacity: 1;
+  width: 30px;
+  transform: scale(1.1);
 }
 
-/* Responsive */
+/* Touch and Swipe Improvements for Mobile */
+.skills-slider .swiper-wrapper {
+  padding: 10px 0;
+}
+
+.skills-slider .swiper-slide {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Active slide indicator */
+.skills-slider .swiper-slide-active .project-card {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.15);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px and below) */
 @media (max-width: 768px) {
   .about {
     padding: 80px 0;
   }
 
+  .about-content {
+    gap: 3rem;
+  }
+
   .about-skills {
     padding: 2rem;
+    margin: 0 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .about-skills h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-slider {
+    padding: 15px 5px 50px !important;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    margin: 0 5px;
+  }
+
+  .project-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Adjust pagination for tablet */
+  .skills-slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .skills-slider .swiper-pagination-bullet-active {
+    width: 25px;
   }
 }
 
+/* Mobile Phones (576px and below) */
 @media (max-width: 576px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-content {
+    gap: 2.5rem;
+  }
+
+  .about-skills {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+    max-width: calc(100% - 1rem);
+    border-radius: 12px;
+  }
+
+  .about-skills h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .skills-slider {
+    padding: 10px 0 45px !important;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+    margin: 0 2px;
+    border-radius: 12px;
+  }
+
+  .project-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-card .tech {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Statistics grid for mobile */
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .stat {
+    padding: 1.25rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* Mobile pagination */
+  .skills-slider .swiper-pagination {
+    bottom: 15px !important;
+  }
+
+  .skills-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .skills-slider .swiper-pagination-bullet-active {
+    width: 20px;
+  }
+}
+
+/* Small Phones (400px and below) */
+@media (max-width: 400px) {
+  .about {
+    padding: 50px 0;
+  }
+
+  .about-skills {
+    padding: 1.25rem;
+    margin: 0 0.25rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+
+  .skills-slider {
+    padding: 5px 0 40px !important;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
   .about {
     padding: 60px 0;
   }
@@ -187,6 +441,67 @@
   }
 
   .project-card {
-    padding: 1.5rem;
+    padding: 1rem;
+    min-height: 200px;
+  }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .project-card {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .stat,
+  .skills-slider .swiper-pagination-bullet {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .stat:hover {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: white) {
+  .about {
+    background: linear-gradient(to bottom, #1a202c, #2d3748);
+  }
+
+  .about-skills {
+    background: #2d3748;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .project-card {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+  }
+
+  .project-card h4 {
+    color: #f7fafc;
+  }
+
+  .project-card p {
+    color: #cbd5e0;
+  }
+
+  .stat {
+    background: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .about-text p {
+    color: #cbd5e0;
+  }
+  
+  .stat-label {
+    color: #cbd5e0;
   }
 }

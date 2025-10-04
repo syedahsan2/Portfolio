@@ -1,6 +1,7 @@
 // components/Contact/Contact.js
 import React, { useState } from 'react';
 import './Contact.css';
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,14 +20,29 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send this data to a backend
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+
+    emailjs
+      .send(
+        // "service_qgaeifc",      // Replace with your EmailJS Service ID
+        // "template_95rqdqr",     // Replace with your EmailJS Template ID
+        formData,               // This will pass { name, email, subject, message }
+        // "IAD-b1cfSNa94hLTt"       // Replace with your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error(error.text);
+          alert("❌ Oops! Something went wrong. Try again.");
+        }
+      );
   };
 
   return (
@@ -75,18 +91,13 @@ const Contact = () => {
             </div>
             
             <div className="social-links">
-              <a href="#" className="social-link">
+              <a href="https://github.com/syedahsan2" className="social-link">
                 <i className="fab fa-github"></i>
               </a>
               <a href="www.linkedin.com/in/syed-ahsan-developer/" className="social-link">
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="#" className="social-link">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="social-link">
-                <i className="fab fa-instagram"></i>
-              </a>
+              
             </div>
           </div>
           

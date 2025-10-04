@@ -339,7 +339,7 @@
   }
   
   .project-filters {
-    justify-content: flex-start;
+    justify-content: center;
     overflow-x: auto;
     padding-bottom: 10px;
     margin-bottom: 2rem;

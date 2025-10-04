@@ -31,12 +31,6 @@ const Footer = () => {
               <a href="www.linkedin.com/in/syed-ahsan-developer/" className="social-link" aria-label="LinkedIn">
                 <i className="fab fa-linkedin"></i>
               </a>
-              <a href="#" className="social-link" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="social-link" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
             </div>
           </div>
 
@@ -50,15 +44,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-section">
-            <h4>Services</h4>
-            <ul className="footer-links">
-              <li><a href="#web-development">Web Development</a></li>
-              <li><a href="#ui-design">UI/UX Design</a></li>
-              <li><a href="#react-apps">React Applications</a></li>
-              <li><a href="#consulting">Consulting</a></li>
-            </ul>
-          </div>
+          
 
           <div className="footer-section">
             <h4>Contact Info</h4>
@@ -73,10 +59,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} DevPortfolio. All rights reserved.</p>
-            <div className="footer-legal">
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms of Service</a>
-            </div>
+            <p>Designed & Developer by Syed Ahsan</p>
           </div>
           <button 
             className="back-to-top" 

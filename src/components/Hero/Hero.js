@@ -15,9 +15,9 @@ const Hero = () => {
             <span className="title">Front-End & PHP Developer</span>
           </h1>
           <p className="hero-description">
-            I build clean, responsive web apps with React and PHP.
-            Over 3 years’ experience creating custom WordPress themes and plugins—no drag-and-drop, just solid, 
-            performance-focused code.
+            I develop responsive and user-friendly websites using PHP, React, and Shopify. With over 3 years of hands-on experience, 
+            I specialize in building custom WordPress themes and plugins from scratch, 
+            ensuring clean structure, strong performance, and reliable functionality
 
           </p>
           <div className="hero-buttons">

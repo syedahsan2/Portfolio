@@ -54,15 +54,13 @@ function About() {
           <div className="about-text">
             <h3>Curious about who I am?</h3>
             <p>
-              Front-end developer with over three years of experience in React.js,
-              PHP, Next.js, and WordPress. Holds a diploma in Software Engineering
-              and is pursuing a BBIT degree while working two developer roles.
-              Focuses on clean, responsive interfaces, performance, and security.
+              Front-end developer with over three years of experience in React.js, PHP, Next.js, WordPress, and Shopify. 
+              Holds a diploma in Software Engineering and is currently pursuing a BBIT degree while managing two developer roles. 
+              Skilled in creating clean, responsive interfaces with a strong focus on performance, security, and user experience.
             </p>
             <p>
-              Key projects include Website in Week, Fasts Technology, Logos Pixel,
-              Moviestar Jacket, Celebs Jacket, and multiple custom WordPress
-              builds with bespoke themes and plugins.
+              Key projects include Website in Week, Fasts Technology, Logos Pixel, Moviestar Jacket, Celebs Jacket, 
+              and multiple custom WordPress and Shopify builds featuring bespoke themes and plugins.
             </p>
 
             <div className="about-stats">

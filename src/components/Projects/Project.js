@@ -117,7 +117,7 @@ const Projects = () => {
       tags: ['PHP', 'Custom Code', 'HTML5,CSS3,Bootstrap'],
       category: 'PHP/ WordPress',
       liveLink: 'https://faststechnologies.com/',
-      githubLink: 'https://github.com/syedahsan2/Logos-Pixels'
+      githubLink: 'https://github.com/syedahsan2/Fasts-Technologies'
     }
   ];
 

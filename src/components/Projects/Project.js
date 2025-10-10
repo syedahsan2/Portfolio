@@ -70,6 +70,7 @@ const Projects = () => {
       tags: ['PHP', 'CSS3', 'Portfolio'],
       category: 'PHP/ WordPress',
       liveLink: 'https://vtuberstation.com/',
+      githubLink: 'https://github.com/syedahsan2/Vtuber_Station'
     },
     {
       id: 8,
@@ -79,6 +80,7 @@ const Projects = () => {
       tags: ['PHP', 'CSS3', 'Design'],
       category: 'PHP/ WordPress',
       liveLink: 'https://websiteinweek.com/',
+      githubLink: 'https://github.com/syedahsan2/Website_in_week'
     },
     {
       id: 9,

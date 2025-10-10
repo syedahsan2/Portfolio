@@ -12,7 +12,7 @@ const Hero = () => {
           <h1 className="hero-title">
             <span className="greeting">Hello, I'm</span>
             <span className="name">Syed Ahsan</span>
-            <span className="title">Front-End & PHP Developer</span>
+            <span className="title">Front-End Developer</span>
           </h1>
           <p className="hero-description">
             I develop responsive and user-friendly websites using PHP, React, and Shopify. With over 3 years of hands-on experience, 

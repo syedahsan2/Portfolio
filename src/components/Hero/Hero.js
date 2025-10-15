@@ -12,12 +12,12 @@ const Hero = () => {
           <h1 className="hero-title">
             <span className="greeting">Hello, I'm</span>
             <span className="name">Syed Ahsan</span>
-            <span className="title">Front-End Developer</span>
+            <span className="title">WordPress & Shopify Developer</span>
           </h1>
           <p className="hero-description">
-            I develop responsive and user-friendly websites using PHP, React, and Shopify. With over 3 years of hands-on experience, 
-            I specialize in building custom WordPress themes and plugins from scratch, 
-            ensuring clean structure, strong performance, and reliable functionality
+            I create responsive, high-performing websites using PHP, WordPress, and Shopify.
+    With 3+ years of experience, I specialize in customizing themes, 
+    optimizing site performance, and maintaining reliable, user-friendly platforms.
 
           </p>
           <div className="hero-buttons">

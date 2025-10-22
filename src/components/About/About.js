@@ -54,9 +54,9 @@ function About() {
           <div className="about-text">
             <h3>Curious about who I am?</h3>
             <p>
-              Front-end developer with over three years of experience in React.js, PHP, Next.js, WordPress, and Shopify. 
-              Holds a diploma in Software Engineering and is currently pursuing a BBIT degree while managing two developer roles. 
-              Skilled in creating clean, responsive interfaces with a strong focus on performance, security, and user experience.
+              I am a front-end developer with over three years of experience, primarily working on Shopify including theme customization, Liquid, and UX Builder, as well as 
+              WordPress with customizations and PHP integration. I also have basic hands-on experience with React from past team-based projects. My work focuses on 
+              building responsive, clean, and optimized user interfaces with a strong emphasis on performance, security, and usability.
             </p>
             <p>
               Key projects include Website in Week, Fasts Technology, Logos Pixel, Moviestar Jacket, Celebs Jacket, 

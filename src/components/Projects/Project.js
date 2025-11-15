@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 import './Project.css';
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('All');
 
   const projects = [
     {
@@ -49,8 +49,8 @@ const Projects = () => {
       title: 'E-Commerce Store',
       description: 'A leather jacket e-commerce store with product reviews and admin panel.',
       image: '/images/Moviestar_jacket.webp',
-      tags: ['PHP', 'Custome Code', 'CSS3,HTML5,Bootstrap'],
-      category: 'PHP/ WordPress',
+      tags: ['Shopify', 'Liquid', 'Customization'],
+      category: 'Shopify',
       liveLink: 'https://moviestarjacket.com/',  
     },
     {
@@ -123,10 +123,10 @@ const Projects = () => {
     }
   ];
 
-  const categories = ['all', 'PHP/ WordPress', 'HTML/CSS/Bootstrap', 'Shopify', 'React'];
+  const categories = ['All', 'PHP/ WordPress', 'HTML/CSS/Bootstrap', 'Shopify', 'React'];
 
   const filteredProjects =
-    activeFilter === 'all'
+    activeFilter === 'All'
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 

@@ -1,6 +1,9 @@
 // components/About/About.js
 import React from "react";
 import "./About.css";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,7 +21,7 @@ const projects = [
   {
     name: "Moviestar Jacket",
     description: "E-commerce platform for movie-inspired jackets, built with a custom front-end and backend structure.",
-    tech: "PHP, HTML, CSS"
+    tech: "Shopify, Liquid"
   },
   {
     name: "Logos Pixel",
@@ -42,25 +45,59 @@ const projects = [
   tech: "Shopify, Liquid"
   }
 ];
-
+const jobExperience = [
+  {
+    company: "Fasts Technologies",
+    position: "Senior Web Developer",
+    period: "2024 – Present | Night Shift",
+    description: "I handled complete client projects end-to-end from front-end and back-end development to customization, bug fixing, and full website optimization.",
+    achievements: ["Successfully delivered multiple client websites single-handedly, including landing pages, business sites, and e-commerce stores.", 
+      "Improved website performance across projects, achieving significantly faster load times and better Lighthouse scores.",
+       "Built clean, responsive interfaces that improved user engagement and overall project satisfaction."]
+  },
+  {
+    company: "Maccers International",
+    position: "Senior Front-End Developer", 
+    period: "2024 – Present | Morning Shift",
+    description: "Developed and optimized fully customized WordPress and Shopify e-commerce websites, implementing unique client designs and custom functionality.",
+    achievements: ["Delivered fully customized Shopify and WordPress sites exactly matching client design requirements.", 
+      "Built custom Liquid and WordPress code for functionalities not available in standard themes", 
+      "Optimized website speed and performance, improving user experience across devices."]
+  },
+  {
+    company: "Intellect Works International",
+    position: "Intern to Assistant Project Manager",
+    period: "2022 – 2024", 
+    description: "Led small design and development teams to deliver projects on time while maintaining quality standards.",
+    achievements: ["Led small design and development teams to deliver projects on time while maintaining quality standards.",
+       "Acted as main liaison between clients and developers, clarifying requirements and providing updates.", 
+       "Improved client platforms by enhancing features and optimizing scalability."]
+  }
+];
 function About() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  }, []);
   return (
     <section className="about" id="about">
       <div className="container">
         <h2 className="section-title">About Me</h2>
 
         <div className="about-content">
-          {/* Top: About text */}
           <div className="about-text">
             <h3>Curious about who I am?</h3>
             <p>
-              I am a front-end developer with over three years of experience, primarily working on Shopify including theme customization, Liquid, and UX Builder, as well as 
-              WordPress with customizations and PHP integration. I also have basic hands-on experience with React from past team-based projects. My work focuses on 
-              building responsive, clean, and optimized user interfaces with a strong emphasis on performance, security, and usability.
+              I am a front-end developer with over three years of experience, primarily working on Shopify (theme customization, Liquid, UX Builder) and WordPress (customizations and PHP integration). 
+              I also have basic hands-on experience with React from past team-based projects. My work focuses on 
+              building responsive, clean, and optimized user interfaces with strong emphasis on performance, security, and usability.
             </p>
             <p>
-              Key projects include Website in Week, Fasts Technology, Logos Pixel, Moviestar Jacket, Celebs Jacket, 
-              and multiple custom WordPress and Shopify builds featuring bespoke themes and plugins.
+              Key projects include Website in Week, Fasts Technology, Logos Pixel, Moviestar Jacket, Celebs Jacket, and multiple WordPress and Shopify sites 
+              where I handled advanced customizations, speed optimization, and overall front-end development.
             </p>
 
             <div className="about-stats">
@@ -78,8 +115,7 @@ function About() {
               </div>
             </div>
           </div>
-
-          {/* Bottom: Projects showcase */}
+ 
           <div className="about-skills">
             <h3>Project-Based Skills Showcase</h3>
             <Swiper
@@ -103,6 +139,31 @@ function About() {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+          <div className="experience-section" data-aos="fade-up">
+            <h3>Work Experience</h3>
+            <div className="timeline">
+              {jobExperience.map((job, index) => (
+                <div 
+                  key={index} 
+                  className="timeline-item"
+                  data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
+                  data-aos-delay={index * 200}
+                >
+                  <div className="timeline-content">
+                    <h4>{job.position}</h4>
+                    <h5>{job.company}</h5>
+                    <span className="period">{job.period}</span>
+                    <p>{job.description}</p>
+                    <ul>
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
